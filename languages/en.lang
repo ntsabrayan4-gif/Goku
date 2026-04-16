@@ -61,7 +61,7 @@ login.listenMqttCloseByUser=ListenMQTT closed by user
 login.retryCheckLiveCookie=Retrying to check cookie... %1
 login.startBotSuccess=Bot has been started successfully, start receiving messages from users
 
-version.tooOldVersion=You are using a too old version of Goat-Bot, please update to the latest version by typing the command: %1 into the cmd/console/terminal/shell
+version.tooOldVersion=You are using a too old version of NooCore-v3-Bot, please update to the latest version by typing the command: %1 into the cmd/console/terminal/shell
 
 # bot/custom.js
 custom.refreshedFb_dtsg=Refreshed fb_dtsg and jazoest successfully
@@ -93,15 +93,22 @@ handlerEvents.userBanned=You have been banned from using the bot\n» Reason: %1\
 handlerEvents.threadBanned=This group has been banned from using the bot\n» Reason: %1\n» Time: %2\n» Thread ID: %3
 handlerEvents.onlyAdminBox=This group is currently enabled only group administrators can use the bot
 handlerEvents.onlyAdminBot=❌ | Currently only bot's admin can use bot
-handlerEvents.commandNotFound=Command "%1" does not exist, type %2help to see all available commands
-handlerEvents.commandNotFound2=The command you are using does not exist, type %1help to see all available commands
-handlerEvents.commandSyntaxError=The command you are using is wrong syntax, please type %1help %2 to see the details of how to use this command
 
-handlerEvents.onlyAdmin=❌ | Only group administrators can use the command "%1"
+# Command not found (without suggestion) – %1 = user name, %2 = command name, %3 = prefix
+handlerEvents.commandNotFound=Hey %1, "%3%2" doesn't ring a bell 🤔 Type %3help to see all available commands!
+
+# Command not found (prefix only) – %1 = user name, %2 = prefix
+handlerEvents.commandNotFound2=Hey %1, prefix alone does nothing, please type %2help to see what I can do and explore all available commands
+
+# Command not found with suggestion – %1 = user name, %2 = command name, %3 = prefix, %4 = suggested command
+handlerEvents.commandNotFoundWithSuggestion=Hey %1, "%3%2" isn't a command I know 🤔 Did you mean %3%4? Give that a try! Or type %3help to see everything available.
+
+handlerEvents.commandSyntaxError=The command you are using is wrong syntax, please type %1help %2 to see the details of how to use this command
+handlerEvents.onlyAdmin=❌ | Hey, %1 — only group administrators can use the "%2" command
 handlerEvents.onlyAdminToUseOnReply=❌ | Only group administrators can use the reply function of the command "%1"
 handlerEvents.onlyAdminToUseOnReaction=❌ | Only group administrators can use the reaction function of the command "%1"
-
-handlerEvents.onlyAdminBot2=❌ | Only bot's admin can use the command "%1"
+handlerEvents.onlyAdminBot2=❌ | Hey, %1 — only the bot admin can use the "%2" command
+handlerEvents.onlyCreator=❌ | Hey, %1 — only the bot creator can use the "%2" command
 handlerEvents.onlyAdminBot2ToUseOnReply=❌ | Only bot's admin can use the reply function of the command "%1"
 handlerEvents.onlyAdminBot2ToUseOnReaction=❌ | Only bot's admin can use the reaction function of the command "%1"
 
@@ -117,21 +124,20 @@ handlerEvents.onlyDeveloperToUseOnReaction=💻 | Developers only – reaction f
 
 handlerEvents.waitingForCommand=⏱ You are in the waiting time to use this command, please come back after %1s
 
-# Prefix Only Response (with mention) – %1 = user name, %2 = prefix
-handlerEvents.prefixOnly=Hey %1, you typed just "%2" — but what do you want me to do? Try "%2help" to see available commands.
-
-# Command Approval – %1 = command name
-handlerEvents.pendingApproval=⚠️ Your command "%1" is now pending approval by a group admin. Thank you for your patience!
+# Prefix only response (with mention) – %1 = user name, %2 = prefix
+handlerEvents.prefixOnly=Hey %1, you typed just "%2" — but what do you want me to do? 🤔 Try %2help to see all available commands!
 
 handlerEvents.errorOccurred=❌ [ %1 ]\nAn error occurred at command "%2"\n\n%3
 handlerEvents.errorOccurred2=❌ [ %1 ]\nAn error occurred at command onChat in command "%2"\n\n%3
-handlerEvents.errorOccurred3=❌ [ %1 ]\nAn error occurred when executing onReply at command "%2"\n\n%3
+handlerEvents.errorOccurred3=❌ [ %1 ]\nAn error occurred when executing ncReply at command "%2"\n\n%3
 handlerEvents.errorOccurred4=❌ [ %1 ]\nAn error occurred when executing onReaction at command "%2"\n\n%3
 handlerEvents.errorOccurred5=❌ [ %1 ]\nAn error occurred when executing onEvent at command "%2"\n\n%3
 handlerEvents.errorOccurred6=❌ [ %1 ]\nAn error occurred when executing onEvent at command "%2"\n\n%3
 handlerEvents.errorOccurred7=❌ [ %1 ]\nAn error occurred when executing onAnyEvent at command "%2"\n\n%3
 handlerEvents.cannotFindCommandName=❌ Cannot find command name to execute this reply!
 handlerEvents.cannotFindCommand=❌ Cannot find command "%1" to execute this reply!
+handlerEvents.premiumRequired=⭐ | The command "%1" is for premium users only. Contact admin to upgrade your account!
+handlerEvents.premiumExpired=⭐ | Your premium subscription has expired. The command "%1" is for premium users only. Contact admin to renew your subscription!
 
 # bot/autoUptime.js
 autoUptime.autoUptimeTurnedOn=AutoUptime mode turned on
